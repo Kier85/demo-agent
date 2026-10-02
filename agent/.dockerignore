@@ -1,0 +1,4 @@
+node_modules/
+traces/
+eval/results/
+.env

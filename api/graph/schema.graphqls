@@ -1,0 +1,156 @@
+# Mock commerce backend for a print-on-demand shop.
+#
+# Customer-scoped operations require the X-Customer-Email header (in a real
+# system this would come from the customer's authenticated session). An order
+# that belongs to someone else is indistinguishable from one that does not exist.
+#
+# Policy refusals come back as GraphQL errors with extensions.code set to one of:
+#   UNAUTHENTICATED, NOT_FOUND, INVALID_INPUT, POLICY_VIOLATION, FORBIDDEN
+
+scalar Time
+
+enum OrderStatus {
+  RECEIVED
+  PROOF_PENDING
+  IN_PRODUCTION
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum ShipmentStatus {
+  LABEL_CREATED
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  DELIVERED
+  EXCEPTION
+}
+
+enum EscalationCategory {
+  REFUND
+  DAMAGED_OR_MISPRINT
+  LOST_OR_DELAYED
+  POLICY_EXCEPTION
+  AMBIGUOUS
+  OTHER
+}
+
+type Customer {
+  id: ID!
+  email: String!
+  name: String!
+}
+
+type Address {
+  name: String!
+  line1: String!
+  line2: String
+  city: String!
+  region: String
+  postalCode: String!
+  country: String!
+}
+
+type OrderItem {
+  sku: String!
+  product: String!
+  size: String!
+  quantity: Int!
+  unitPriceCents: Int!
+}
+
+type Order {
+  id: ID!
+  status: OrderStatus!
+  createdAt: Time!
+  totalCents: Int!
+  currency: String!
+  customer: Customer!
+  shippingAddress: Address!
+  items: [OrderItem!]!
+  "Set when this order was created as a reorder of another order."
+  reorderOf: ID
+  "True while the order has not entered production."
+  canChangeAddress: Boolean!
+}
+
+type TrackingEvent {
+  at: Time!
+  location: String!
+  description: String!
+}
+
+type Shipment {
+  orderId: ID!
+  carrier: String!
+  trackingNumber: String!
+  status: ShipmentStatus!
+  shippedAt: Time!
+  estimatedDelivery: Time!
+  deliveredAt: Time
+  events: [TrackingEvent!]!
+}
+
+type Escalation {
+  id: ID!
+  ticketId: String!
+  orderId: ID
+  category: EscalationCategory!
+  reason: String!
+  summary: String!
+  createdAt: Time!
+}
+
+type AgentStatus {
+  provider: String!
+  enabled: Boolean!
+  reason: String!
+  updatedAt: Time!
+}
+
+type Query {
+  "Returns null when the order does not exist or belongs to another customer."
+  order(id: ID!): Order
+  "Live tracking from the (mock) carrier. Null when the order has not shipped."
+  shipment(orderId: ID!): Shipment
+  "Kill-switch state. Checks the provider row and the global '*' row."
+  agentStatus(provider: String!): AgentStatus!
+  "Admin only."
+  escalations(limit: Int = 20): [Escalation!]!
+}
+
+input AddressInput {
+  name: String!
+  line1: String!
+  line2: String
+  city: String!
+  region: String
+  postalCode: String!
+  country: String!
+}
+
+input ReorderItemInput {
+  sku: String!
+  quantity: Int!
+}
+
+input EscalationInput {
+  ticketId: String!
+  orderId: ID
+  category: EscalationCategory!
+  reason: String!
+  summary: String!
+}
+
+type Mutation {
+  "Refused with POLICY_VIOLATION once the order is in production or later."
+  updateShippingAddress(orderId: ID!, address: AddressInput!): Order!
+  """
+  Creates a new order (status RECEIVED, awaiting proof and payment) that copies
+  the given items. Omit items to copy the whole order. Idempotent per key.
+  """
+  createReorder(orderId: ID!, items: [ReorderItemInput!], idempotencyKey: String!): Order!
+  escalateToHuman(input: EscalationInput!): Escalation!
+  "Admin only. Provider '*' disables every provider."
+  setAgentStatus(provider: String!, enabled: Boolean!, reason: String!): AgentStatus!
+}

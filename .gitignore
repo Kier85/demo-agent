@@ -1,0 +1,16 @@
+# secrets
+.env
+*.env
+!.env.example
+
+# build
+node_modules/
+dist/
+api/bin/
+*.exe
+
+# runtime output
+agent/traces/
+agent/eval/results/*.json
+!agent/eval/results/latest.json
+coverage/

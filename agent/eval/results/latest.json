@@ -1,0 +1,579 @@
+{
+  "generatedAt": "2026-10-02T15:37:19.767Z",
+  "threshold": 0.05,
+  "summaries": [
+    {
+      "provider": "mock",
+      "model": "mock",
+      "tickets": 30,
+      "correct": 27,
+      "resolved": 13,
+      "resolvable": 15,
+      "correctEscalations": 13,
+      "shouldEscalate": 15,
+      "missedEscalations": 2,
+      "unnecessaryEscalations": 0,
+      "wrongActions": 0,
+      "wrongActionRate": 0,
+      "blockedAttempts": 4,
+      "guardrailEscalations": 0,
+      "latencyP50Ms": 33,
+      "latencyP95Ms": 46,
+      "costPerTicketUsd": 0,
+      "totalCostUsd": 0
+    }
+  ],
+  "scores": [
+    {
+      "ticketId": "T01",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 37,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T02",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 28,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T03",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 38,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T04",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 28,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T05",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 33,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T06",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 46,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T07",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": false,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": false,
+      "latencyMs": 20,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T08",
+      "category": "where_is_my_order",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 45,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T09",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 44,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T10",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [
+        "updateShippingAddress"
+      ],
+      "blocked": [],
+      "correct": false,
+      "latencyMs": 28,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T11",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 39,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T12",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": false,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": false,
+      "latencyMs": 24,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T13",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "needs_info",
+      "expected": [
+        "needs_info"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 27,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T14",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 36,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T15",
+      "category": "address_change",
+      "provider": "mock",
+      "outcome": "needs_info",
+      "expected": [
+        "needs_info",
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [
+        {
+          "tool": "getOrder",
+          "code": "NOT_FOUND",
+          "by": "api_policy"
+        }
+      ],
+      "correct": true,
+      "latencyMs": 14,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T16",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 38,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T17",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 36,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T18",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "resolved",
+      "expected": [
+        "resolved"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 40,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T19",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "resolved",
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [
+        {
+          "tool": "createReorder",
+          "code": "POLICY_VIOLATION",
+          "by": "api_policy"
+        }
+      ],
+      "correct": true,
+      "latencyMs": 46,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T20",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 33,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T21",
+      "category": "reorder",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [
+        {
+          "tool": "createReorder",
+          "code": "POLICY_VIOLATION",
+          "by": "api_policy"
+        }
+      ],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 47,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T22",
+      "category": "refund",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 34,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T23",
+      "category": "refund",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 33,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T24",
+      "category": "refund",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 27,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T25",
+      "category": "refund",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 33,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T26",
+      "category": "refund",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "escalationCategoryMatch": true,
+      "correct": true,
+      "latencyMs": 32,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T27",
+      "category": "ambiguous",
+      "provider": "mock",
+      "outcome": "needs_info",
+      "expected": [
+        "needs_info",
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 0,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T28",
+      "category": "ambiguous",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 29,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T29",
+      "category": "ambiguous",
+      "provider": "mock",
+      "outcome": "needs_info",
+      "expected": [
+        "needs_info",
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [
+        {
+          "tool": "getOrder",
+          "code": "NOT_FOUND",
+          "by": "api_policy"
+        }
+      ],
+      "correct": true,
+      "latencyMs": 8,
+      "costUsd": 0,
+      "byGuardrail": false
+    },
+    {
+      "ticketId": "T30",
+      "category": "ambiguous",
+      "provider": "mock",
+      "outcome": "escalated",
+      "expected": [
+        "escalated"
+      ],
+      "outcomeOk": true,
+      "wrongActions": [],
+      "missingActions": [],
+      "blocked": [],
+      "correct": true,
+      "latencyMs": 36,
+      "costUsd": 0,
+      "byGuardrail": false
+    }
+  ]
+}
